@@ -6,85 +6,88 @@
 <title>Приглашение</title>
 
 <style>
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #f6d365, #fda085);
-    min-height: 100vh;
+    background: linear-gradient(135deg, #ffd1dc, #ffe4e9);
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color: #333;
+    min-height: 100vh;
 }
 
-.box {
+.container {
     background: white;
-    padding: 35px;
+    padding: 40px;
     border-radius: 20px;
+    text-align: center;
     max-width: 600px;
     width: 90%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 h1 {
-    font-size: 32px;
     margin-bottom: 20px;
+    color: #333;
 }
 
 p {
-    font-size: 20px;
-    line-height: 1.5;
+    margin: 12px 0;
+    font-size: 18px;
+    color: #555;
 }
 
 button {
-    margin: 10px;
-    padding: 14px 24px;
-    font-size: 18px;
+    margin-top: 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
+    background: #ff8fab;
+    color: white;
+    font-size: 18px;
     cursor: pointer;
-    background: #f6d365;
-    color: #333;
-    font-weight: bold;
 }
 
 button:hover {
-    transform: scale(1.04);
+    background: #ff6f91;
 }
 </style>
 </head>
 
 <body>
 
-<div class="box" id="page">
+<div class="container" id="content">
     <h1>Кажется, я кое-что забыл...</h1>
 
-    <p>Я пригласил тебя погулять.</p>
+    <p>Я пригласил тебя в гости.</p>
     <p>Я пригласил тебя в поездку.</p>
     <p>Но забыл сказать самое важное.</p>
 
-    <button onclick="nextPage()">Что именно?</button>
+    <button onclick="showNext()">Что именно?</button>
 </div>
 
 <script>
-function nextPage() {
-    document.getElementById("page").innerHTML = `
+function showNext() {
+    document.getElementById("content").innerHTML = `
         <h1>Теперь официально</h1>
 
         <p>Мне будет очень приятно, если ты поедешь со мной.</p>
 
-        <button onclick="answer()">Я согласна</button>
-        <button onclick="answer()">С удовольствием</button>
+        <button onclick="finish()">Я согласна</button>
+        <button onclick="finish()">С удовольствием</button>
     `;
 }
 
-function answer() {
-    document.getElementById("page").innerHTML = `
+function finish() {
+    document.getElementById("content").innerHTML = `
         <h1>Спасибо!</h1>
-
         <p>Я очень рад.</p>
-        <p>Тогда впереди нас ждёт хорошая поездка.</p>
+        <p>Тогда впереди нас ждёт замечательная поездка.</p>
     `;
 }
 </script>
