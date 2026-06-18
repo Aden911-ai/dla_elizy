@@ -3,92 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Приглашение</title>
+
+<title>Небольшой сюрприз</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body{
+    margin:0;
+    padding:20px;
+    font-family:Arial,sans-serif;
+    background:#ffe4ea;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffd1dc, #ffe4e9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+.card{
+    width:100%;
+    max-width:420px;
+    background:#fff;
+    border-radius:20px;
+    padding:30px 20px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
-.container {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 600px;
-    width: 90%;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+h1{
+    font-size:30px;
+    margin-bottom:20px;
 }
 
-h1 {
-    margin-bottom: 20px;
-    color: #333;
+p{
+    font-size:18px;
+    line-height:1.6;
+    margin:10px 0;
 }
 
-p {
-    margin: 12px 0;
-    font-size: 18px;
-    color: #555;
-}
-
-button {
-    margin-top: 20px;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 10px;
-    background: #ff8fab;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #ff6f91;
+button{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border:none;
+    border-radius:12px;
+    background:#ff8da1;
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container" id="content">
-    <h1>Кажется, я кое-что забыл...</h1>
+<div class="card" id="page">
 
-    <p>Я пригласил тебя в гости.</p>
-    <p>Я пригласил тебя в поездку.</p>
-    <p>Но забыл сказать самое важное.</p>
+<h1>Кажется, я кое-что забыл…</h1>
 
-    <button onclick="showNext()">Что именно?</button>
+<p>Я пригласил тебя в гости.</p>
+<p>Я пригласил тебя в поездку.</p>
+<p>Но забыл сказать самое важное.</p>
+
+<button onclick="nextPage()">
+Что именно?
+</button>
+
 </div>
 
 <script>
-function showNext() {
-    document.getElementById("content").innerHTML = `
-        <h1>Теперь официально</h1>
+function nextPage(){
+document.getElementById("page").innerHTML=`
 
-        <p>Мне будет очень приятно, если ты поедешь со мной.</p>
+<h1>Теперь официально</h1>
 
-        <button onclick="finish()">Я согласна</button>
-        <button onclick="finish()">С удовольствием</button>
-    `;
+<p>
+Мне будет очень приятно,
+если ты поедешь со мной.
+</p>
+
+<button onclick="finish()">
+Я согласна
+</button>
+
+<button onclick="finish()">
+С удовольствием
+</button>
+
+`;
 }
 
-function finish() {
-    document.getElementById("content").innerHTML = `
-        <h1>Спасибо!</h1>
-        <p>Я очень рад.</p>
-        <p>Тогда впереди нас ждёт замечательная поездка.</p>
-    `;
+function finish(){
+document.getElementById("page").innerHTML=`
+
+<h1>Спасибо!</h1>
+
+<p>
+Я очень рад.
+</p>
+
+<p>
+Тогда впереди нас ждёт замечательная поездка.
+</p>
+
+`;
 }
 </script>
 
