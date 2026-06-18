@@ -1,12 +1,22 @@
-<button onclick="answer()">Я согласна</button>
-<button onclick="answer()">С удовольствием</button>
+<h1>Кажется, я кое-что забыл...</h1>
+
+<p>Я пригласил тебя в гости.</p>
+<p>Я пригласил тебя в поездку.</p>
+<p>Но забыл сказать самое важное.</p>
+
+<button onclick="nextPage()">Что именно?</button>
 
 <script>
-function answer() {
+function nextPage() {
     document.body.innerHTML = `
         <div style="text-align:center; margin-top:100px; font-family:Arial;">
-            <h1>Спасибо!</h1>
-            <p>Я очень рад. Тогда впереди нас ждёт хорошая поездка.</p>
+            <h1>Теперь официально</h1>
+
+            <p>Мне будет очень приятно, если ты поедешь со мной.</p>
+
+            <button onclick="alert('Спасибо за ответ!')">
+                Я согласна
+            </button>
         </div>
     `;
 }
