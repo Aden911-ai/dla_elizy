@@ -1,23 +1,93 @@
-<h1>Кажется, я кое-что забыл...</h1>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Приглашение</title>
 
-<p>Я пригласил тебя в гости.</p>
-<p>Я пригласил тебя в поездку.</p>
-<p>Но забыл сказать самое важное.</p>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f6d365, #fda085);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #333;
+}
 
-<button onclick="nextPage()">Что именно?</button>
+.box {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+button {
+    margin: 10px;
+    padding: 14px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #f6d365;
+    color: #333;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: scale(1.04);
+}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="page">
+    <h1>Кажется, я кое-что забыл...</h1>
+
+    <p>Я пригласил тебя в гости.</p>
+    <p>Я пригласил тебя в поездку.</p>
+    <p>Но забыл сказать самое важное.</p>
+
+    <button onclick="nextPage()">Что именно?</button>
+</div>
 
 <script>
 function nextPage() {
-    document.body.innerHTML = `
-        <div style="text-align:center; margin-top:100px; font-family:Arial;">
-            <h1>Теперь официально</h1>
+    document.getElementById("page").innerHTML = `
+        <h1>Теперь официально</h1>
 
-            <p>Мне будет очень приятно, если ты поедешь со мной.</p>
+        <p>Мне будет очень приятно, если ты поедешь со мной.</p>
 
-            <button onclick="alert('Спасибо за ответ!')">
-                Я согласна
-            </button>
-        </div>
+        <button onclick="answer()">Я согласна</button>
+        <button onclick="answer()">С удовольствием</button>
+    `;
+}
+
+function answer() {
+    document.getElementById("page").innerHTML = `
+        <h1>Спасибо!</h1>
+
+        <p>Я очень рад.</p>
+        <p>Тогда впереди нас ждёт хорошая поездка.</p>
     `;
 }
 </script>
+
+</body>
+</html>
